@@ -1,0 +1,6 @@
+[workspace]
+members = [
+  "phabricator",
+  "phabricator-api",
+  "phabricator-mock"
+]
