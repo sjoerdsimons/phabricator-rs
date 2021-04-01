@@ -1,6 +1,6 @@
 [workspace]
 members = [
-  "phabricator",
+  "phabricator-mock",
   "phabricator-api",
-  "phabricator-mock"
+  "phabricator"
 ]
