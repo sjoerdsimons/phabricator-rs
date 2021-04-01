@@ -2,6 +2,7 @@
 name = "phabricator-api"
 version = "0.0.1"
 authors = ["Sjoerd Simons <sjoerd@collabora.com>"]
+description = "Low-level Phabricator web API wrappers"
 edition = "2018"
 license = "MIT OR Apache-2.0"
 homepage = "https://github.com/sjoerdsimons/phabricator-rs"
