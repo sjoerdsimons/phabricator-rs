@@ -1,6 +1,6 @@
 [package]
 name = "phabricator-api"
-version = "0.0.2"
+version = "0.0.3"
 authors = ["Sjoerd Simons <sjoerd@collabora.com>"]
 description = "Low-level Phabricator web API wrappers"
 edition = "2018"
@@ -24,4 +24,4 @@ anyhow = "1.0"
 env_logger = "0.8"
 structopt = "0.3"
 tokio = { version = "1.0", features = [ "full" ] }
-phabricator-mock = { path = "../phabricator-mock", version = "0.0.2" }
+phabricator-mock = { path = "../phabricator-mock", version = "0.0.3" }
