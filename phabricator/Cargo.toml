@@ -1,6 +1,6 @@
 [package]
 name = "phabricator"
-version = "0.0.1"
+version = "0.0.2"
 authors = ["Sjoerd Simons <sjoerd@collabora.com>"]
 description = "Crate to work with Phabricator web APIs"
 edition = "2018"

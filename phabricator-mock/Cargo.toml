@@ -1,6 +1,6 @@
 [package]
 name = "phabricator-mock"
-version = "0.0.1"
+version = "0.0.2"
 authors = ["Sjoerd Simons <sjoerd@collabora.com>"]
 description = "Mock crate for the Phabricator web API"
 edition = "2018"
