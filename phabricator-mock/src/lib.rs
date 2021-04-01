@@ -172,7 +172,7 @@ impl PhabMockServer {
             .build()
             .unwrap();
         m.add_status(s);
-        m.new_status("wip", "In Progress", "indigo");
+        m.new_status("wip", "In Progress", Some("indigo"));
         let s = status()
             .value("closed")
             .name("Closed")
@@ -304,15 +304,14 @@ impl PhabMockServer {
         p
     }
 
-    pub fn new_status(&self, value: &str, name: &str, color: &str) -> Status {
-        let s = status()
-            .value(value)
-            .name(name)
-            .color(color)
-            .build()
-            .unwrap();
-        self.add_status(s.clone());
-        s
+    pub fn new_status(&self, value: &str, name: &str, color: Option<&str>) -> Status {
+        let mut s = status();
+        if let Some(color) = color {
+            s.color(color);
+        }
+        let status = s.value(value).name(name).build().unwrap();
+        self.add_status(status.clone());
+        status
     }
 
     pub fn new_simple_task(&self, id: u32, user: &User) -> Task {

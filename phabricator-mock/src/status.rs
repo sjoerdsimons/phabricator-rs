@@ -13,8 +13,8 @@ pub struct Status {
     pub value: String,
     #[builder(setter(into))]
     pub name: String,
-    #[builder(setter(into))]
-    pub color: String,
+    #[builder(setter(strip_option, into), default)]
+    pub color: Option<String>,
     #[builder(setter(strip_option), default)]
     pub special: Option<Special>,
     #[builder(default)]

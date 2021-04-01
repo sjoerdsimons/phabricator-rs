@@ -58,7 +58,7 @@ pub type SearchResult = crate::types::SearchResult<AttachmentsResult, Fields>;
 pub struct Status {
     pub value: String,
     pub name: String,
-    pub color: String,
+    pub color: Option<String>,
 }
 
 #[derive(Deserialize, Debug)]
@@ -159,11 +159,22 @@ mod test {
     }
 
     #[tokio::test]
-    async fn simple() {
+    async fn basics() {
         let m = PhabMockServer::start().await;
         let user = m.new_user("user", "Test User");
         m.new_simple_task(100, &user);
-        m.new_simple_task(200, &user);
+        let status = m.new_status("foo", "bar", None);
+        let task = phabricator_mock::task()
+            .id(200)
+            .full_name("Test task")
+            .description("Test description")
+            .author(user.clone())
+            .owner(user.clone())
+            .priority(m.default_priority())
+            .status(status)
+            .build()
+            .unwrap();
+        m.add_task(task);
 
         let client = crate::Client::new(m.uri(), m.token().to_string());
         let s = Search {
