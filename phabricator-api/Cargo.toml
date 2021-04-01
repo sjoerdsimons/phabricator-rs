@@ -1,6 +1,6 @@
 [package]
 name = "phabricator-api"
-version = "0.0.3"
+version = "0.0.4"
 authors = ["Sjoerd Simons <sjoerd@collabora.com>"]
 description = "Low-level Phabricator web API wrappers"
 edition = "2018"
